@@ -28,6 +28,6 @@ exports.loginUser = async (req, res, next) => {
         .send({ success: true, message: 'User logged in successfully' });
     } else res.status(400).send({ success: false, error: 'Invalid password' });
   } catch (error) {
-    res.status(500).send({ success: false, error: `User doesn't exist` });
+    res.status(404).send({ success: false, error: `User doesn't exist` });
   }
 };
